@@ -1,59 +1,252 @@
 /* frontend/src/App.css */
 .App {
-  text-align: center;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
-  background-color: #282c34;
-  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px 20px;
   color: white;
-  border-radius: 10px;
-  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .App-header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .App-header p {
   margin: 10px 0 0 0;
   font-size: 1.2rem;
-  color: #61dafb;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tabs button {
+  padding: 12px 24px;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabs button:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.tabs button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.test-btn {
+  background: #4CAF50 !important;
+  color: white !important;
+}
+
+.test-btn:hover {
+  background: #45a049 !important;
 }
 
 .App-main {
-  max-width: 1000px;
+  flex: 1;
+  padding: 30px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
+  width: 100%;
 }
 
-.student-list {
+.section {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.section h3 {
+  color: #555;
+  margin: 20px 0 15px 0;
+  font-size: 1.3rem;
+}
+
+.form-container {
+  background: #f8f9ff;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #e6e9ff;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.form-group button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.form-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.list-container {
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  min-width: 600px;
 }
 
 th {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 12px;
+  padding: 15px;
   text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  color: #555;
 }
 
 tr:hover {
-  background-color: #f5f5f5;
+  background-color: #f8f9ff;
+}
+
+.btn-edit, .btn-delete {
+  padding: 6px 12px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-edit {
+  background: #ffc107;
+  color: #333;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #e0a800;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.App-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.App-footer p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-group {
+    grid-template-columns: 1fr;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 10px;
+  }
 }
